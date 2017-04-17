@@ -26,7 +26,13 @@ import javax.persistence.TemporalType;
 public class SalesOrderHeader {
 
 	/* Sales order ids are generated within a number range starting with 5 */
-	@TableGenerator(name = "SalesOrderGenerator", table = "ESPM_ID_GENERATOR", pkColumnName = "GENERATOR_NAME", valueColumnName = "GENERATOR_VALUE", pkColumnValue = "SalesOrder", initialValue = 500000000, allocationSize = 100)
+	@TableGenerator(name = "SalesOrderGenerator", 
+			table = "ESPM_ID_GENERATOR", 
+			pkColumnName = "GENERATOR_NAME", 
+			valueColumnName = "GENERATOR_VALUE", 
+			pkColumnValue = "SalesOrder", 
+			initialValue = 500000000, 
+			allocationSize = 100)
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE, generator = "SalesOrderGenerator")
 	@Column(name = "SALES_ORDER_ID", length = 10)
